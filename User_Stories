@@ -1,0 +1,7 @@
+1. As a user, I need to be able to join a game using an ID.
+
+2. As a host, I need to be able to start the game once everyone is in.
+
+3. As a player, I need to be able to enter the price of an item for guessing.
+
+4. As a host, I need the option to play again or quit once the results have been shown
