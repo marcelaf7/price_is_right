@@ -1,14 +1,19 @@
 from Player import Player
+from randItem import RandAmazon
+
 
 class Game:
 
     def __init__(self):
-        self.amazon_items = RandAmazon('items.json')
+        self.amazon_items = RandAmazon('AmazonData.JSON')
         self.player_list = []
         self.num_players = 0
         self.price = 20
 
     def play_game(self):
+        self.item = self.amazon_items.generateRand()
+        self.price = self.item['Price']
+
         print('Welcome to Price is Right: The Game!')
         self.num_players = self.get_number_players()
         self.create_players_and_guess()
@@ -31,7 +36,7 @@ class Game:
         indices = [i + 1 for i, x in enumerate(guess_differences) if x == min(guess_differences)]
         indices = ', '.join(str(e) for e in indices)
 
-        print('Actual price:', self.price)
+        print('Actual price of', self.item['Title'], 'was', self.price)
         print('Player(s)', indices, 'have won the game!')
 
     def get_number_players(self):
@@ -45,3 +50,6 @@ class Game:
                     return num_players
             except ValueError:
                 print('Bruh, I just said 2-4')
+
+game = Game()
+game.play_game()
