@@ -16,9 +16,14 @@ class Game:
 
         print('Welcome to Price is Right: The Game!')
         self.num_players = self.get_number_players()
+        self.display_item()
         self.create_players_and_guess()
         self.display_player_guesses()
         self.display_winners()
+
+    def display_item(self):
+        print('Item is: \n\t', self.item['Title'])
+        print(self.item['Image'])
 
     def create_players_and_guess(self):
         for i in range(self.num_players):
