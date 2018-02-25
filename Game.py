@@ -17,10 +17,14 @@ class Game:
         print('Welcome to Price is Right: The Game!')
         self.num_players = self.get_number_players()
         self.setup_players()
-        print('You are bidding on', self.item['Title'])
+        self.display_item()
         self.let_players_guess()
         self.display_player_guesses()
         self.display_winners()
+
+    def display_item(self):
+        print('You are bidding on \n\t', self.item['Title'])
+        print(self.item['Image'])
 
     def get_number_players(self):
         while True:
