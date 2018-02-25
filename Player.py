@@ -1,6 +1,6 @@
 class Player:
     x = 4
 
-    def __init__(self, ID):
+    def __init__(self, username):
         self.guess = 0
-        self.ID = ID
+        self.username = username

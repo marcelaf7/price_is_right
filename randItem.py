@@ -13,4 +13,4 @@ class RandAmazon:
     # generates a random number within the size of the dictionary and returns item as dictionary
     # returned dictionary contains "title", "image", and "price"
     def generateRand(self):
-        return self.dictData[str(random.randint(1, self.size))]
+        return self.dictData[str(random.randint(0, self.size - 1))]
