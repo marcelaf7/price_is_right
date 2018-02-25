@@ -60,10 +60,14 @@ class Game:
 
         if len(indices) == 1:
             print(self.player_list[indices[0]].username, 'has won the game!')
+            self.player_list[indices[0]].score += 1
         else:
             winning_usernames = [player.username for i, player in enumerate(self.player_list) if i in indices]
             winning_usernames = ', '.join(str(e) for e in winning_usernames)
             print(winning_usernames, 'have won the game!')
+            for i, player in enumerate(self.player_list):
+                if i in indices:
+                    player.score += 1
 
     def get_image_url(self):
         return self.item['URL']
