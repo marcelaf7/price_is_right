@@ -65,5 +65,8 @@ class Game:
             winning_usernames = ', '.join(str(e) for e in winning_usernames)
             print(winning_usernames, 'have won the game!')
 
+    def get_image_url(self):
+        return self.item['URL']
+
 game = Game()
 game.play_game()
