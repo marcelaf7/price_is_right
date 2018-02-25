@@ -26,7 +26,4 @@ class RandAmazon:
                     break
 
         self.history.append(randnum)
-
-        print(randnum)
-
         return self.dictData[str(randnum)]
