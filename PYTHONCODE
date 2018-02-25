@@ -1,0 +1,28 @@
+import Player
+
+print('Welcome to Price is Right: The Game!')
+
+while(True):
+    num_players = input('Please enter number of players (2-4): ')
+    try:
+        num_players = int(num_players)
+        break
+    except ValueError:
+        print('Nah')
+
+###
+### LOGIC FOR CHOOSING ITEM GOES HERE
+###
+
+player_list = []
+for i in range(num_players):
+    current_player = Player(num_players)
+
+    current_guess = input('Player ', i, 'Please enter a price: ')
+    current_player.guess = current_guess
+
+    player_list.append(Player())
+
+#for i in range(num_players):
+
+
