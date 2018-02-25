@@ -25,8 +25,19 @@ class App(QWidget):
 
         self.gameCode = QLabel('',self)
         self.gameCode.setGeometry(10,10,400,50)
+
+        self.actualPrice = QLabel('',self)
+        self.actualPrice.setGeometry(10,10,400,50)
+
         self.p1Output = QLabel('', self)
         self.p1Output.setGeometry(10,10,400,50)
+        self.p2Output = QLabel('', self)
+        self.p2Output.setGeometry(10,10,400,50)
+        self.p3Output = QLabel('', self)
+        self.p3Output.setGeometry(10,10,400,50)
+        self.p4Output = QLabel('', self)
+        self.p4Output.setGeometry(10,10,400,50)
+
 
         self.productName = QLabel('',self)
         self.productName.setGeometry(10,10,400,50)
@@ -51,6 +62,18 @@ class App(QWidget):
         self.submitButton.move(150,410) 
         self.submitButton.resize(0,0)
         self.submitButton.clicked.connect(self.submit_button)
+
+        self.replayButton = QPushButton('Replay?', self)
+        self.replayButton.setToolTip('joinGame')
+        self.replayButton.move(150,410) 
+        self.replayButton.resize(0,0)
+        self.replayButton.clicked.connect(self.submit_button)
+
+        self.quitButton = QPushButton('Quit', self)
+        self.quitButton.setToolTip('joinGame')
+        self.quitButton.move(150,410) 
+        self.quitButton.resize(0,0)
+        self.quitButton.clicked.connect(self.submit_button)
 
         self.image = QLabel(self)
         self.pixmap = QPixmap('./fart_ring.jpg')
@@ -83,7 +106,6 @@ class App(QWidget):
         self.image.setPixmap(self.pixmap)
         self.image.resize(200,200)
         self.image.move(150,100)
-        self.textbox.resize(0,0)
         self.joinGameButton.resize(0,0)
         self.productName.setText('The Moon Ring')
         self.productName.move(200,300)
@@ -96,8 +118,31 @@ class App(QWidget):
 
     @pyqtSlot()
     def submit_button(self):
-        print('submitted')
-        pass
+        self.image.resize(0,0)
+        self.textbox.resize(0,0)
+        self.productName.resize(0,0)
+        self.enterGuess.resize(0,0)
+        self.submitButton.resize(0,0)
+
+        self.actualPrice.setText('Cost: $100.00')
+        self.actualPrice.move(200,100)
+        self.p1Output.setText('P1 Result')
+        self.p1Output.move(150,175)
+        self.p2Output.setText('P2 Result')
+        self.p2Output.move(150,225)
+        self.p3Output.setText('P3 Result')
+        self.p3Output.move(150,275)
+        self.p4Output.setText('P4 Result')
+        self.p4Output.move(150,325)
+
+        self.replayButton.resize(200,50)
+        self.replayButton.move(150,400)
+        self.quitButton.resize(200,50)
+        self.quitButton.move(150,475)
+        
+    @pyqtSlot()
+    def replay_button(self):
+        self.initUI()
         
  
 if __name__ == '__main__':
