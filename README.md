@@ -10,7 +10,9 @@ It displays a random item from Amazon and 2 - 4 players compete to guess the pri
 Run Game.py with Python3  
   
 ### Authors  
-Marcelaf7
-FoxXix
-jurentie
-cjurcek
+[Marcelaf7](https://github.com/marcelaf7)  
+[FoxXix](https://github.com/foxxix)  
+[jurentie](https://github.com/jurentie)  
+[cjurcek](https://github.com/cjuracek)
+
+
